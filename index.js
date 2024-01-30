@@ -30,6 +30,13 @@ app.get('/', (request, response) => {
   response.send("Welcome to the Phonebook")
 })
 
+app.get('/info', (request, response) => {
+  const timeReceived = new Date(Date.now())
+  const numberOfPeople = persons.length
+  response.send(`<p>Phonebook has information for ${numberOfPeople} people</p>
+    <p>${timeReceived}</p>`)
+})
+
 app.get('/api/persons', (request, response) => {
   response.json(persons)
 })
@@ -42,11 +49,6 @@ app.get('/api/persons/:id', (request, response) => {
   } else {
     response.status(404).end()
   }
-})
-
-app.get('/info', (request, response) => {
-  const numberOfPeople = persons.length
-  response.json(`Phonebook has information for ${numberOfPeople} people`)
 })
 
 app.delete('/api/persons/:id', (request, response) => {
