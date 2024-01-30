@@ -62,11 +62,27 @@ app.post('/api/persons', (request, response) => {
     return Math.floor(Math.random() * 99999)
   } 
   const person = request.body
-  if (!person) {
+  console.log("person ", person)
+  if (!person.name) {
     response.status(400).json({
-      error: 'no information given'
+      error: 'no name entered'
     })
+    return
   }
+  if (!person.number) {
+    response.status(400).json({
+      error: 'no number entered'
+    })
+    return
+  }
+  if (persons.filter(p => p.name === person.name).length > 0) {
+    console.log("duplicate")
+    response.status(400).json({
+      error: 'name must be unique'
+    })
+    return
+  }
+
   person.id = generateID()
   persons = persons.concat(person)
   response.json(person)
