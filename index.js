@@ -1,7 +1,13 @@
 const express = require('express')
+const morgan = require('morgan')
+
 const app = express()
 
+morgan.token('post-data', function (req, res) { return JSON.stringify(req.body) })
+const morganFormat = ':method :url :status :res[content-length] - :response-time ms :post-data'
+
 app.use(express.json())
+app.use(morgan(morganFormat))
 
 let persons = [
   { 
@@ -62,7 +68,6 @@ app.post('/api/persons', (request, response) => {
     return Math.floor(Math.random() * 99999)
   } 
   const person = request.body
-  console.log("person ", person)
   if (!person.name) {
     response.status(400).json({
       error: 'no name entered'
