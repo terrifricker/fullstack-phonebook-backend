@@ -1,6 +1,9 @@
 ## Full Stack Open Source
 ### Part 3 - Phonebook Backend
-### Exercises 3.1 to 3.8
+
+Site deployed at https://fullstack-phonebook-backend-t3m8.onrender.com/
+
+### Exercises 3.1 to 3.8 (Part 3a)
 
 *This program is the backend for a rudimentary phonebook app with a field for filtering by name, a form for entering names and phone numbers, and a display of the people matching the search term or if that field is empty, a display of all people.  When displayed, each person has a delete button shown to remove them from the phonebook.*
 
@@ -56,3 +59,21 @@ Middleware are functions that can be used for handling request and response obje
 
 Exercises 3.7 and 3.8
 Add the middleware `morgan` for logging.  It is added as a dependency with `npm install morgan`.  Have morgan log using the tiny configuration.  Then also log the data sent in http post requests.
+
+### Exercises 3.9 to 3.11 (Part 3b)
+
+Exercise 3.9
+Have the phonebook front end get data from the phonebook backend instead of using json-server.  The main steps were:
+1. Adding cors middleware to the backend index.js file
+2. Updating the frontend personService baseUrl to match the backend endpoint
+
+Exercise 3.10 and 3.11
+Deploy the phonebook project to Render.  The main steps were:
+1. Updating the PORT constant to read from Render's environmental variable
+`const PORT = process.env.PORT || 3001`
+2. Making the frontend personService baseUrl relative to backend folder
+3. Creating a production build of our front end
+4. Add a copy of our frontend production build folder to the backend folder
+5. Adding express.static middleware so our backend can deploy a static site
+6. Creating a new Web Service on Render with our backend github repository
+Deployed site is located at https://fullstack-phonebook-backend-t3m8.onrender.com/
