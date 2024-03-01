@@ -77,3 +77,12 @@ Deploy the phonebook project to Render.  The main steps were:
 5. Adding express.static middleware so our backend can deploy a static site
 6. Creating a new Web Service on Render with our backend github repository
 Deployed site is located at https://fullstack-phonebook-backend-t3m8.onrender.com/
+
+Exercise 3.12
+Create a cloud-based MongoDB database for the phonebook application with MongoDB Atlas.
+1. Create a new Project at my MongoDB Atlas account named 'fullstack-phonebook'
+2. Create a new Cluster called 'fullstack-phonebook' with username and password
+
+Create a mongo.js file in the project directory, that can be used for adding entries to the phonebook, and for listing all of the existing entries in the phonebook.
+1. Code for connecting to the database
+2. Code for using command-line arguments to add a new person to the database
