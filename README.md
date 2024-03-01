@@ -86,3 +86,4 @@ Create a cloud-based MongoDB database for the phonebook application with MongoDB
 Create a mongo.js file in the project directory, that can be used for adding entries to the phonebook, and for listing all of the existing entries in the phonebook.
 1. Code for connecting to the database
 2. Code for using command-line arguments to add a new person to the database
+3. Code for displaying all data if just password is given as a command-line argument
