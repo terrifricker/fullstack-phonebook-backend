@@ -83,7 +83,9 @@ Create a cloud-based MongoDB database for the phonebook application with MongoDB
 1. Create a new Project at my MongoDB Atlas account named 'fullstack-phonebook'
 2. Create a new Cluster called 'fullstack-phonebook' with username and password
 
-Create a mongo.js file in the project directory, that can be used for adding entries to the phonebook, and for listing all of the existing entries in the phonebook.
+Create a mongo.js file in the project directory, that can be used for adding entries to the phonebook, and for listing all of the existing entries in the phonebook using command line commands.
 1. Code for connecting to the database
 2. Code for using command-line arguments to add a new person to the database
+    `node mongo.js <password> <name> <number>`
 3. Code for displaying all data if just password is given as a command-line argument
+    `node mongo.js <password>`
